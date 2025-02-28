@@ -5,15 +5,7 @@ import type * as React from "react";
 import { CommandIcon } from "lucide-react";
 
 import { NavMain } from "./nav-main";
-import {
-	Sidebar,
-	SidebarContent,
-	SidebarHeader,
-	SidebarMenu,
-	SidebarMenuItem,
-	SidebarMenuButton,
-	SidebarRail,
-} from "@rhino-ui/ui";
+import { Sidebar } from "@rhinolabs/ui";
 
 import { mockOpenApiDoc } from "@/mocks/api-data";
 import { transformOpenApiToSidebar } from "@/utils/api/openapi-adapter";
@@ -24,10 +16,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
 	return (
 		<Sidebar {...props}>
-			<SidebarHeader>
-				<SidebarMenu>
-					<SidebarMenuItem>
-						<SidebarMenuButton
+			<Sidebar.Header>
+				<Sidebar.Menu>
+					<Sidebar.MenuItem>
+						<Sidebar.MenuButton
 							size="lg"
 							className="data-(state=open):bg-sidebar-accent data-(state=open):text-sidebar-accent-foreground"
 						>
@@ -37,18 +29,18 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 							<div className="grid flex-1 text-left text-sm leading-tight">
 								<span className="truncate font-semibold">Docutopia</span>
 							</div>
-						</SidebarMenuButton>
-					</SidebarMenuItem>
-					<SidebarMenuItem>
+						</Sidebar.MenuButton>
+					</Sidebar.MenuItem>
+					<Sidebar.MenuItem>
 						<SearchBar navItems={sidebarData} />
-					</SidebarMenuItem>
-				</SidebarMenu>
-			</SidebarHeader>
+					</Sidebar.MenuItem>
+				</Sidebar.Menu>
+			</Sidebar.Header>
 
-			<SidebarContent>
+			<Sidebar.Content>
 				<NavMain items={sidebarData} />
-			</SidebarContent>
-			<SidebarRail />
+			</Sidebar.Content>
+			<Sidebar.Rail />
 		</Sidebar>
 	);
 }

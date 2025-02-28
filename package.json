@@ -10,7 +10,7 @@
 		"lint:fix": "biome format --write && biome lint --fix"
 	},
 	"dependencies": {
-		"@rhino-ui/ui": "{file}",
+		"@rhinolabs/ui": "{file}",
 		"@tanstack/react-query": "^5.62.11",
 		"@tanstack/react-router": "^1.94.0",
 		"lucide-react": "^0.474.0",
